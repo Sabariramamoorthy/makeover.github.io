@@ -1,0 +1,128 @@
+<html>
+<head>
+<title>Booking Recieved</title>  
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body style="background-color: rgba(60, 151, 142, 0.849);">
+
+<div class="container">
+    <table class="table table-bordered table-primary table-striped ">
+        <thead class="thead-light">
+            <th class="table-primary">Name</th>
+            <th class="table-primary">Email</th>
+            <th class="table-primary">Phone</th>
+            <th class="table-primary">Alternatephone</th>
+            <th class="table-primary">Receptiondate</th>
+            <th class="table-primary">ReceptionTime</th>
+            <th class="table-primary">Receptionaddress</th>
+            <th class="table-primary">MarriageDate</th>
+            <th class="table-primary">MarriageTIme</th>
+            <th class="table-primary">Marriageaddress</th>
+            <th class="table-primary">Additionalinfo</th>
+        </thead>
+        <tbody id="tbody1">
+        </tbody>
+        </table>
+        <p id="demo"></p>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script> 
+
+
+<script id="MainScript">
+    var firebaseConfig = {
+        apiKey: "AIzaSyC5slKVKE4z13mKZQynHi8hwBlhK8xy1SU",
+        authDomain: "sound-dahlia-290617.firebaseapp.com",
+        databaseURL: "https://sound-dahlia-290617-default-rtdb.firebaseio.com/",
+        projectId: "sound-dahlia-290617",
+        storageBucket: "sound-dahlia-290617.appspot.com",
+        messagingSenderId: "333674478909",
+        appId: "1:333674478909:web:a22289e066221ef1935954"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+
+
+    function SelectallData(){
+        firebase.database().ref('BookYourSlot').once('value',
+        function(AllRecords)
+        {
+           const  node = [];
+           AllRecords.forEach(
+               function (CurrenRecord)
+               {                                  
+                var name=CurrenRecord.val().Name;                
+                var email=CurrenRecord.val().Email; 
+                var phone=CurrenRecord.val().Phone;                
+                var Alternatephone=CurrenRecord.val().Alternatephone; 
+                var Receptiondate=CurrenRecord.val().Receptiondate;                
+                var ReceptionTime=CurrenRecord.val().ReceptionTime;  
+                var Receptionaddress=CurrenRecord.val().Receptionaddress; 
+                var MarriageDate=CurrenRecord.val().MarriageDate;                
+                var MarriageTIme=CurrenRecord.val().MarriageTIme; 
+                var Marriageaddress=CurrenRecord.val().Marriageaddress;                
+                var Additionalinfo=CurrenRecord.val().Additionalinfo;  
+                console.log(name, email,phone,Alternatephone,Receptiondate,ReceptionTime,Receptionaddress,MarriageDate,MarriageTIme,Marriageaddress,Additionalinfo);
+                Additemstotable(name, email,phone,Alternatephone,Receptiondate,ReceptionTime,Receptionaddress,MarriageDate,MarriageTIme,Marriageaddress,Additionalinfo);
+
+               }
+           );
+        
+        });
+
+      
+    }
+
+    window.onload=SelectallData;
+
+    function Additemstotable(name, email,phone,Alternatephone,Receptiondate,ReceptionTime,Receptionaddress,MarriageDate,MarriageTIme,Marriageaddress,Additionalinfo)
+
+    {
+        var tbody=document.getElementById('tbody1');
+        var trow=document.createElement('tr');
+        var td1=document.createElement('td');
+        var td2=document.createElement('td');
+        var td3=document.createElement('td');
+        var td4=document.createElement('td');
+        var td5=document.createElement('td');
+        var td6=document.createElement('td');
+        var td7=document.createElement('td');
+        var td8=document.createElement('td');
+        var td9=document.createElement('td');
+        var td10=document.createElement('td');
+        var td11=document.createElement('td');
+        td1.innerHTML =name;
+        td2.innerHTML =email;
+        td3.innerHTML =phone;
+        td4.innerHTML =Alternatephone;
+        td5.innerHTML =Receptiondate;
+        td6.innerHTML =ReceptionTime;
+        td7.innerHTML =Receptionaddress;
+        td8.innerHTML =MarriageDate;
+        td9.innerHTML =MarriageTIme;
+        td10.innerHTML =Marriageaddress;
+        td11.innerHTML =Additionalinfo;
+        trow.appendChild(td1);
+        trow.appendChild(td2);
+        trow.appendChild(td3);
+        trow.appendChild(td4);
+        trow.appendChild(td5);
+        trow.appendChild(td6);
+        trow.appendChild(td7);
+        trow.appendChild(td8);
+        trow.appendChild(td9);
+        trow.appendChild(td10);
+        trow.appendChild(td11);
+        tbody.appendChild(trow);
+        
+        
+    }
+
+</script>
+</body>
+
+</html>

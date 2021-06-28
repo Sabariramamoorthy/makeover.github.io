@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="images/logo.png" />
+    <title>Anithaa Makeover Artistry</title>
+
+    <!-- Icons font CSS-->
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/main.css" rel="stylesheet" media="all">
+</head>
+
+<body style="background-color: rgb(162,141,209);">
+    <div class="font-poppins"style="text-align: center;align-content: center;">
+        <a><img src="images/logo.png" width="75"></a>
+        <br>
+        <a style="font-size: large;color: white;">Anithaa Makeover Artistry</a>
+    </div> 
+    <div class="page-wrapper bg-gra-01 p-t-new p-b-100 font-poppins">
+		<br>
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">Registration Info</h2>
+                    <form method="POST">
+                        <div class="input-group">
+                            <input class="input--style-3" id="name" type="text" placeholder="Name" name="name" required>
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" id="email" type="email" placeholder="Email" name="email" required>
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" id ="phone" type="text" placeholder="Phone" name="phone" required >
+                        </div>
+                        <div class="input-group">
+                            <input id ="dob" class="input--style-3 js-datepicker" type="text" placeholder="Birthdate" name="birthday" required>
+                            <i id ="dob1" class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                        </div>
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select id ="mrgStatus" name="gender" required> 
+                                    <option disabled="disabled" selected="selected">Marital Status</option>
+                                    <option>Single</option>
+                                    <option>Married</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select id ="order" name="gender" required> 
+                                    <option disabled="disabled" selected="selected">Are You Looking for Bridal Service?</option>
+                                    <option>Yes,I am Looking for Bridal Service</option>
+                                    <option>No,I am here for Webinar</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-t-10">
+                            <input type="button" class="btn btn--pill btn--green" value="Submit" onclick="dataupload()">
+                            <!-- <button class="btn btn--pill btn--green" type="submit">Submit</button> -->
+                        </div> 
+                        <br>
+                        <div id="alterid" class="alertsucess" style="visibility: hidden;">
+                            <span id="alterspan" class="closebtn" onclick="this.parentElement.style.display='none';"></span> 
+                          </div>
+                        <br>
+
+                        <div id="webinarlink" style="visibility: hidden;">
+                            <label for="GetYourLinkhere" style="color: white;margin-left: 100px;">Get Your Webinar Link here</label>
+                            <br>
+                           <br>
+                            <span id="webinarlink" class="btnlink btn--pilllink btn--link" >https://zoom.us/</span>
+
+                            <br>
+                            <br>
+                            <input type="button" class="btnwebinar btn--pill btn--webinar" value="Copy the Webinar link" onclick="copy_link()">
+                        </div> 
+                        <br>
+                        <div id="Booking" class="font-poppins" style="visibility:hidden;text-align: center;align-content: center;" >
+                            <a href="BookYourSlot.html" class="btn btn--pill btn--reg">Book Your Slot</a><br />
+                        </div>
+                        <br>                     
+                    </form>
+                    <div class="font-poppins"style="text-align: center;align-content: center;">
+                        <a style="color: white;margin-left: 5px"href="https://www.instagram.com/anithaa_makeup_artist_salem/"><img src="images/insta.png"width="20"></a> 
+                        <a style="color: white;margin-left: 15px"href="https://wa.me/c/919524477565"><img src="images/whatsapp.png"width="20"></a>
+                        <a style="color: white;margin-left: 15px"href="mailto:ammuani003@gmail.com"><img src="images/gmail.png"width="20"></a> <br>
+                        <a style="color: white;margin-left: 10px;font-size: 10px;">anithaamakeoverartsitry</a>
+                    </div> 
+                </div>
+            </div>  
+        </div>
+        </div>
+    </div>
+     <div class="font-poppins"style="text-align: center;align-content: center;">
+        <br>
+        <a style="font-size: xx-large;color: white;font-weight: bold;">Happy Brides</a><br>
+        <br>
+    </div>  
+    <div class="font-poppins"style="text-align: center;align-content: center;">
+        <a style="color: rgb(232, 252, 54);font-size:medium;">Bride xxxx On 26th September 2020</a>
+    </div> 
+    <div class="font-poppins"style="text-align: center;align-content: center;">
+       <img id="Photo1" src="images/pic1.png" alt="Mosaic" width="400" height="200" class="img1">
+        <div style="background-color: rgb(255, 252, 226,0.3);padding: 10px;margin-left: 20px;margin-right: 20px;">
+           
+            <p style="margin-left: 25px; margin-right: 10px;margin-top: 2px">
+                <strong style="font-size:large;color: white;">Anitha was wonderful! </strong><br>
+                Anitha did a wonderful job with hair and makeup for my wedding.
+                I did my trial with her months ago, and was very happy with it and felt at ease with Heather. 
+                I really only wear mascara on a daily basis, and my bridesmaids also generally wear little to no makeup. 
+                Anitha was great at making us all look beautiful without being too overdone. 
+                She's excellent with a natural look. Everyone's hair looked stunning as well. 
+                Thank you! 
+        </p>
+    </div> <br> <br>
+
+    <div class="font-poppins"style="text-align: center;align-content: center;">
+        <a style="color: rgb(232, 252, 54);font-size:medium;">Bride xxxx On 26th September 2020</a>
+    </div> 
+    <div class="font-poppins"style="text-align: center;align-content: center;">
+       <img id="Photo1" src="images/pic1.png" alt="Mosaic" width="400" height="200" class="img1">
+        <div style="background-color: rgb(255, 252, 226,0.3);padding: 10px;margin-left: 20px;margin-right: 20px;">
+           
+            <p style="margin-left: 25px; margin-right: 10px;margin-top: 2px">
+                <strong style="font-size:large;color: white;">Anitha was wonderful! </strong><br>
+                Anitha did a wonderful job with hair and makeup for my wedding.
+                I did my trial with her months ago, and was very happy with it and felt at ease with Heather. 
+                I really only wear mascara on a daily basis, and my bridesmaids also generally wear little to no makeup. 
+                Anitha was great at making us all look beautiful without being too overdone. 
+                She's excellent with a natural look. Everyone's hair looked stunning as well. 
+                Thank you! 
+        </p>
+    </div> <br> <br>
+
+
+    <div class="font-poppins"style="text-align: center;align-content: center;">
+        <a style="color: rgb(232, 252, 54);font-size:medium;">Bride xxxx On 26th September 2020</a>
+    </div> 
+    <div class="font-poppins"style="text-align: center;align-content: center;">
+       <img id="Photo1" src="images/pic1.png" alt="Mosaic" width="400" height="200" class="img1">
+        <div style="background-color: rgb(255, 252, 226,0.3);padding: 10px;margin-left: 20px;margin-right: 20px;">
+           
+            <p style="margin-left: 25px; margin-right: 10px;margin-top: 2px">
+                <strong style="font-size:large;color: white;">Anitha was wonderful! </strong><br>
+                Anitha did a wonderful job with hair and makeup for my wedding.
+                I did my trial with her months ago, and was very happy with it and felt at ease with Heather. 
+                I really only wear mascara on a daily basis, and my bridesmaids also generally wear little to no makeup. 
+                Anitha was great at making us all look beautiful without being too overdone. 
+                She's excellent with a natural look. Everyone's hair looked stunning as well. 
+                Thank you! 
+        </p>
+    </div> <br> <br>
+
+
+
+    <div class="font-poppins"style="text-align: center;align-content: center;">
+        <a style="color: rgb(232, 252, 54);font-size:medium;">Bride xxxx On 26th September 2020</a>
+    </div> 
+    <div class="font-poppins"style="text-align: center;align-content: center;">
+       <img id="Photo1" src="images/pic1.png" alt="Mosaic" width="400" height="200" class="img1">
+        <div style="background-color: rgb(255, 252, 226,0.3);padding: 10px;margin-left: 20px;margin-right: 20px;">
+          
+            <p style="margin-left: 25px; margin-right: 10px;margin-top: 2px">
+                <strong style="font-size:large;color: white;">Anitha was wonderful! </strong><br>
+                Anitha did a wonderful job with hair and makeup for my wedding.
+                I did my trial with her months ago, and was very happy with it and felt at ease with Heather. 
+                I really only wear mascara on a daily basis, and my bridesmaids also generally wear little to no makeup. 
+                Anitha was great at making us all look beautiful without being too overdone. 
+                She's excellent with a natural look. Everyone's hair looked stunning as well. 
+                Thank you! 
+        </p>
+    </div> <br> <br>
+
+
+    <div class="font-poppins"style="text-align: center;align-content: center;">
+        <a style="color: rgb(232, 252, 54);font-size:medium;">Bride xxxx On 26th September 2020</a>
+    </div> 
+    <div class="font-poppins"style="text-align: center;align-content: center;">
+       <img id="Photo1" src="images/pic1.png" alt="Mosaic" width="400" height="200" class="img1">
+        <div style="background-color: rgb(255, 252, 226,0.3);padding: 10px;margin-left: 20px;margin-right: 20px;">
+          
+            <p style="margin-left: 25px; margin-right: 10px;margin-top: 2px">
+                <strong style="font-size:large;color: white;">Anitha was wonderful! </strong><br>
+                Anitha did a wonderful job with hair and makeup for my wedding.
+                I did my trial with her months ago, and was very happy with it and felt at ease with Heather. 
+                I really only wear mascara on a daily basis, and my bridesmaids also generally wear little to no makeup. 
+                Anitha was great at making us all look beautiful without being too overdone. 
+                She's excellent with a natural look. Everyone's hair looked stunning as well. 
+                Thank you! 
+        </p>
+    </div> <br> <br>
+
+
+    <div class="font-poppins"style="text-align: center;align-content: center;">
+        <a style="color: rgb(232, 252, 54);font-size:medium;">Bride xxxx On 26th September 2020</a>
+    </div> 
+    <div class="font-poppins"style="text-align: center;align-content: center;">
+       <img id="Photo1" src="images/pic1.png" alt="Mosaic" width="400" height="200" class="img1">
+        <div style="background-color: rgb(255, 252, 226,0.3);padding: 10px;margin-left: 20px;margin-right: 20px;">
+ 
+            <p style="margin-left: 25px; margin-right: 10px;margin-top: 2px">
+                <strong style="font-size:large;color: white;">Anitha was wonderful! </strong><br>
+                Anitha did a wonderful job with hair and makeup for my wedding.
+                I did my trial with her months ago, and was very happy with it and felt at ease with Heather. 
+                I really only wear mascara on a daily basis, and my bridesmaids also generally wear little to no makeup. 
+                Anitha was great at making us all look beautiful without being too overdone. 
+                She's excellent with a natural look. Everyone's hair looked stunning as well. 
+                Thank you! 
+        </p>
+    </div> <br> <br>
+
+
+    <div class="font-poppins"style="text-align: center;align-content: center;">
+        <a style="color: rgb(232, 252, 54);font-size:medium;">Bride xxxx On 26th September 2020</a>
+    </div> 
+    <div class="font-poppins"style="text-align: center;align-content: center;">
+       <img id="Photo1" src="images/pic1.png" alt="Mosaic" width="400" height="200" class="img1">
+        <div style="background-color: rgb(255, 252, 226,0.3);padding: 10px;margin-left: 20px;margin-right: 20px;">
+            <p style="margin-left: 25px; margin-right: 10px;margin-top: 2px">
+                <strong style="font-size:large;color: white;">Anitha was wonderful! </strong><br>
+                Anitha did a wonderful job with hair and makeup for my wedding.
+                I did my trial with her months ago, and was very happy with it and felt at ease with Heather. 
+                I really only wear mascara on a daily basis, and my bridesmaids also generally wear little to no makeup. 
+                Anitha was great at making us all look beautiful without being too overdone. 
+                She's excellent with a natural look. Everyone's hair looked stunning as well. 
+                Thank you! 
+        </p>
+    </div>
+    <br> <br>
+    <div class="font-poppins"style="text-align: center;align-content: center;">
+        <a style="color: white"href="https://www.instagram.com/anithaa_makeup_artist_salem/"><img src="images/insta.png"width="20"></a> 
+        <a style="color: white;margin-left: 10px"href="https://wa.me/c/919524477565"><img src="images/whatsapp.png"width="20"></a>
+        <a style="color: white;margin-left: 10px"href="mailto:ammuani003@gmail.com"><img src="images/gmail.png"width="20"></a> <br>
+        <a style="color: white;margin-left: 10px;font-size: 15x;">anithaamakeoverartsitry</a><br>
+        <a href="https://www.instagram.com/sr__creation__/"  style="color: black;margin-left: 10px;font-size:8px;">Designed by:Sabariram Creation</a><br>
+        <br>
+    </div> 
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="js/global.js"></script>
+    
+
+    <script>
+    function copy_link() {
+    var copyText = document.getElementById("webinarlink").innerText;
+    //console.log(copyText);
+    var textArea = document.createElement("textarea");
+    textArea.value = copyText;
+    //console.log(copyText);
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("Copy");
+    textArea.remove();
+}
+</script>
+
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+
+<script>
+    var firebaseConfig = {
+		apiKey: "AIzaSyC5slKVKE4z13mKZQynHi8hwBlhK8xy1SU",
+  authDomain: "sound-dahlia-290617.firebaseapp.com",
+  databaseURL: "https://sound-dahlia-290617-default-rtdb.firebaseio.com",
+  projectId: "sound-dahlia-290617",
+  storageBucket: "sound-dahlia-290617.appspot.com",
+  messagingSenderId: "333674478909",
+  appId: "1:333674478909:web:a22289e066221ef1935954",
+	};
+	firebase.initializeApp(firebaseConfig)
+	firebase.auth().signInAnonymously().catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  console.log(errorCode,errorMessage);
+  // ...
+});
+function writeNewPost(name, email,phone,dob,mrgStatus,order) {
+    var random=Math.floor((Math.random() * 1000) + 1);
+firebase.database().ref('WebinarRegistration/'+name+' - '+random).set({
+    Name:name,
+	Email: email,
+	Phone:phone,
+    Birthday:dob,
+    MaritalStatus:mrgStatus,
+    BridalOrder:order
+}, (error) => {
+  if (error) {
+    document.getElementById("alterid").style.visibility = "visible";
+    document.getElementById("alterid").style.backgroundColor = "red";
+    document.getElementById("alterspan").innerHTML="Registration Failed,Plese DM us in Instagram"
+  } else {
+    document.getElementById("webinarlink").style.visibility = "visible";
+	document.getElementById("alterid").style.visibility = "visible";
+    document.getElementById("alterspan").innerHTML="Registration Sucessfull,Thank You"
+  }
+});
+}
+function dataupload(){
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var dob = document.getElementById("dob").value;
+        var mrgStatus = document.getElementById("mrgStatus").value;
+        var order = document.getElementById("order").value;
+        //console.log(name, email,phone,dob,mrgStatus,order);
+        if(name !="" && email != "" && phone!= "" ){
+            writeNewPost(name, email,phone,dob,mrgStatus,order); 
+        }
+        else{
+            document.getElementById("alterid").style.visibility = "visible";
+            document.getElementById("alterid").style.backgroundColor = "red";
+            document.getElementById("alterspan").innerHTML="Please provide all the Filed" 
+        }
+        if(order == "Yes,I am Looking for Bridal Service"){
+            document.getElementById("Booking").style.visibility = "visible";
+        }
+        
+            
+    }
+   
+
+</script>
+
+</body>
+
+</html>
+<!-- end document-->

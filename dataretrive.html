@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>WebinarRegistration</title>  
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body style="background-color: rgba(60, 151, 142, 0.849);">
+
+<div class="container">
+    <table class="table table-bordered table-primary table-striped ">
+        <thead class="thead-light">
+            <th class="table-primary">Name</th>
+            <th class="table-primary">Email</th>
+            <th class="table-primary">Phone</th>
+            <th class="table-primary">Date of Birth</th>
+            <th class="table-primary">Marital Status</th>
+            <th class="table-primary">Bridal Order</th>
+        </thead>
+        <tbody id="tbody1">
+        </tbody>
+        </table>
+        <p id="demo"></p>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script> 
+
+
+<script id="MainScript">
+    var firebaseConfig = {
+        apiKey: "AIzaSyC5slKVKE4z13mKZQynHi8hwBlhK8xy1SU",
+        authDomain: "sound-dahlia-290617.firebaseapp.com",
+        databaseURL: "https://sound-dahlia-290617-default-rtdb.firebaseio.com/",
+        projectId: "sound-dahlia-290617",
+        storageBucket: "sound-dahlia-290617.appspot.com",
+        messagingSenderId: "333674478909",
+        appId: "1:333674478909:web:a22289e066221ef1935954"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+
+
+    function SelectallData(){
+        firebase.database().ref('WebinarRegistration').once('value',
+        function(AllRecords)
+        {
+           const  node = [];
+           AllRecords.forEach(
+               function (CurrenRecord)
+               {                                  
+                var name=CurrenRecord.val().Name;                
+                var email=CurrenRecord.val().Email; 
+                var phone=CurrenRecord.val().Phone;                
+                var dob=CurrenRecord.val().Birthday; 
+                var mrgStatus=CurrenRecord.val().MaritalStatus;                
+                var order=CurrenRecord.val().BridalOrder;  
+                        
+                Additemstotable(name, email,phone,dob,mrgStatus,order);
+
+               }
+           );
+        
+        });
+
+      
+    }
+
+    window.onload=SelectallData;
+
+    function Additemstotable(name,email,phone,dob,mrgStatus,order)
+
+    {
+        var tbody=document.getElementById('tbody1');
+        var trow=document.createElement('tr');
+        var td1=document.createElement('td');
+        var td2=document.createElement('td');
+        var td3=document.createElement('td');
+        var td4=document.createElement('td');
+        var td5=document.createElement('td');
+        var td6=document.createElement('td');
+        td1.innerHTML =name;
+        td2.innerHTML =email;
+        td3.innerHTML =phone;
+        td4.innerHTML =dob;
+        td5.innerHTML =mrgStatus;
+        td6.innerHTML =order;
+        trow.appendChild(td1);
+        trow.appendChild(td2);
+        trow.appendChild(td3);
+        trow.appendChild(td4);
+        trow.appendChild(td5);
+        trow.appendChild(td6);
+        tbody.appendChild(trow);
+        
+        
+    }
+
+</script>
+</body>
+
+</html>
