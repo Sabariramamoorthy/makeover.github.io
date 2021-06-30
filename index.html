@@ -302,7 +302,7 @@
 });
 function writeNewPost(name, email,phone,dob,mrgStatus,order) {
     var random=Math.floor((Math.random() * 1000) + 1);
-firebase.database().ref('WebinarRegistration/'+name+' - '+random).set({
+firebase.database().ref('TestWebinarRegistration/'+name+' - '+random).set({
     Name:name,
 	Email: email,
 	Phone:phone,
@@ -343,7 +343,15 @@ function dataupload(){
         
             
     }
-   
+    $(document).bind("contextmenu",function(e) {
+ e.preventDefault();
+});
+
+$(document).keydown(function(e){
+    if(e.which === 123){
+       return false;
+    }
+});
 
 </script>
 
