@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+ <style>
+.expire{
+  text-align: center;
+  align-items: center;
+  background-color:rgb(181, 225, 255);
+   margin: auto;
+   padding: 15px;
+   border-radius: 20px;
+   width: 30%;
+   visibility: hidden;
+   display: none;
+}
+@media only screen and (max-width: 600px) {
+    .expire {
+      width: 70%;
+  }
+  
+}
+ </style>   
+</head>
+<body>
+      <div id="true" style="visibility: hidden;display: none;">
+        <h2>Ullae varavum</h2> 
+        <p></p>
+      </div>
+      <br>
+        <br>
+        <br>
+        <br>
+      <div id="flase" class="expire">
+        <p><img src="Images/pngegg (1).png" width="150px" height="150px"></p>
+        <p>Your Session is expired Please Re-login</p>
+        <a href="adminLogin.html">Login Page</a>
+      </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"> </script>
+<script>
+
+
+var date = new Date();
+var today = date.getDate();
+var trueValue= "True"+today
+  // https://www.sitepoint.com/get-url-parameters-with-javascript/
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+var product = urlParams.get('paramName');
+var produc1 = product.replace(/ /g,'+');
+var decrypted = CryptoJS.AES.decrypt(produc1, "myPassword");
+var value=decrypted.toString(CryptoJS.enc.Utf8)
+console.log();
+if(value ==trueValue){
+  document.getElementById("true").style.visibility="visible";
+  document.getElementById("true").style.display="block";
+}
+
+</script>
+</body>
+</html>
