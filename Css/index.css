@@ -1,0 +1,31 @@
+h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body{
+  background-color:#fff5ee ;
+  font-family: 'Roboto Slab', serif;
+  color: #157575;
+}
+.w3container{
+    padding:0.01em 16px;
+    height:270px;  
+    margin: auto;
+}
+.w3section{margin-top:5px!important;margin-bottom:16px!important}
+.smallfont{
+    font-size: medium;
+}
+.leftmargin{
+    margin-left: 2px;
+}
+
+  @media only screen and (max-width: 600px) {
+    .smallfont{
+        font-size: x-small;
+    }
+    .w3container{
+        height:70px;  
+        font-size: x-small}
+
+        .w3container:hover {
+            height: 180px;  
+          }
+  }
