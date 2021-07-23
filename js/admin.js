@@ -1,12 +1,12 @@
 async  function showSlides() {
     var slides = document.getElementById("RecentOrders");
-    slides.src="/Images/1 (2).jpg";
+    slides.src="Images/1 (2).jpg";
     await sleep(1000);
-    slides.src="/Images/1.jpg";
+    slides.src="Images/1.jpg";
     await sleep(1000);
-    slides.src="/Images/5.jpg";
+    slides.src="Images/5.jpg";
     await sleep(1000);
-    slides.src="/Images/7.jpg";
+    slides.src="Images/7.jpg";
   }
   function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
