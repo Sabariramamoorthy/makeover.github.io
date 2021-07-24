@@ -22,10 +22,6 @@ body{
         font-size: x-small;
     }
     .w3container{
-        height:70px;  
+        height:180px;  
         font-size: x-small}
-
-        .w3container:hover {
-            height: 180px;  
-          }
   }
