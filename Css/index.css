@@ -16,12 +16,16 @@ body{
 .leftmargin{
     margin-left: 2px;
 }
-
+.hidden{
+  visibility: hidden;
+  display: none;
+}
   @media only screen and (max-width: 600px) {
     .smallfont{
         font-size: x-small;
     }
     .w3container{
         height:180px;  
-        font-size: x-small}
+        font-size: x-small;
+      }
   }
