@@ -1,12 +1,12 @@
 async  function showSlides() {
     var slides = document.getElementById("RecentOrders");
-    slides.src="Images/1 (2).jpg";
+    slides.src="/Images/1 (2).jpg";
     await sleep(1000);
-    slides.src="Images/1.jpg";
+    slides.src="/Images/1.jpg";
     await sleep(1000);
-    slides.src="Images/5.jpg";
+    slides.src="/Images/5.jpg";
     await sleep(1000);
-    slides.src="Images/7.jpg";
+    slides.src="/Images/7.jpg";
   }
   function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -20,10 +20,18 @@ const urlParams = new URLSearchParams(queryString);
 var product = urlParams.get('paramName');
 if(urlParams.has('paramName'))
 {
-  var produc1 = product.replace(/ /g,'+');
-  var decrypted = CryptoJS.AES.decrypt(produc1, "myPassword");
-  var value=decrypted.toString(CryptoJS.enc.Utf8)
-}
+  try{
+    var produc1 = product.replace(/ /g,'+');
+    var decrypted = CryptoJS.AES.decrypt(produc1, "myPassword");
+    var value=decrypted.toString(CryptoJS.enc.Utf8)
+  }
+  catch(err){
+    document.getElementById("flase").style.visibility="visible";
+    document.getElementById("flase").style.display="block";
+  }
+  }
+ 
+
 else{
   value=null;
 }
