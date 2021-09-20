@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>How to count Instagram Followers  without authentication</title>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+</head>
+<body>
+
+
+ <div class="container">
+   <h3>Total Follower : <strong class="instagram"></strong></h3>
+ </div>
+
+
+ <script type="text/javascript">
+
+
+  var token = '8edc5d9282644f8b42b7ad67e58c84d2';
+
+
+  $.ajax({
+      url: 'https://api.instagram.com/v1/users/6615758187',
+      dataType: 'jsonp',
+      type: 'GET',
+      data: {access_token: token},
+      success: function(data){
+          //var follows = data['data']['counts']['follows'];
+          $(".instagram").text(data);
+		  console.log(data);
+      },
+      error: function(data){
+          console.log(data);
+      }
+  });
+
+
+ </script>
+
+
+</body>
+</html>

